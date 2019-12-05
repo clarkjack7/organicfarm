@@ -1,0 +1,358 @@
+
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>The Cal Poly Organic Farm | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar dissapear on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/favpack/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favpack/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favpack/favicon-16x16.png">
+<link rel="manifest" href="img/fav/favpack/site.webmanifest">
+<link rel="mask-icon" href="img/fav/favpack/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logofarm2.jpg" width="200" height="140" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Welcome</a>
+        </li>
+	   <li>
+          <a href="#gal">A Day on the Farm</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Knowing Matters</a>
+        </li>
+        <li>
+          <a href="#vid">A Look Inside</a>
+			</li>
+      <li>
+          <a href="#num">Organic California</a>
+			</li>
+      <li>
+      <a href="#nation">Nationally Recognized</a>
+            </li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="wrapper">
+  <h1 class="title" data-text="Welcome">Welcome</h1>
+</div>
+	
+
+<!--animated welcome-->
+
+
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Welcome to the Organic Farm at Cal Poly</h2>
+<article>
+<p class="tab">The Cal Poly Organic Farm is a 9 acre organic farm housed in the Horticulture and Crop Science Department, certified organic by the California Certified Organic Farmers. The farm provides an environment where students can experience the ins and outs of organic farming. While also serving as a pillar of the San Luis Obispo community. <br><br>You can find hard-working Cal Poly students selling the produce they grew at the local downtown farmers market as well as the campus farmers market; donating all unsold goods to the Food Bank. The farm also provides students with a learning environment outside the classroom. With multiple classses utilizing the farm as a place to learn and conduct research.</p>
+<p class="tab"><a href="#gal">Slideshow</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">A Day on the farm</h2>
+<article><!--beginning of article-->
+<p class="tab">I accompanied a few of the Organic Farm's student employees during one of their weekly shifts to see the ins and outs of an average day on the farm. </p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/overall410.jpg" width="100%" height="100%" alt="SAN LUIS OBISPO || OCTOBER 21st, 2019 || You may have never heard of it, but Cal Poly is home to a nine acre organic farm. It can be located in the Horticulture and Crop Science Department, and is certified organic by the California Certified Organic Farmers. (CCOF)"/>
+<img src="img/medium410.jpg" width="100%" height="100%" alt="Cal Poly sophomore Environmental Management and Protection major Hope Springer (left) testing out some of the day’s harvest. While Cal Poly fifth year Nutrition major William Gallo (right) inspects his before eating."/>
+<img src="img/interaction410.jpg" width="100%" height="100%" alt="William (right) and Hope (left) use tools and their bare hands to pull weeds from the farm’s chard supply. “It’s a nice change up from being in a lab or in the classroom, actually being out, getting dirty, hands on.” Gallo said."/>
+<img src="img/portrait410.jpg" width="100%" height="100%" alt="One of the farm’s chard sprouts, after harvesting these veggies they will be available to the public at the local farmer’s market."/>
+<img src="img/closeup410.jpg" width="100%" height="100%" alt="The unsung hero, Hope’s phone and speaker serenading herself (left) and fellow novice farmer, Cal Poly junior Anthropology and Geology major Abigail Craig. (right) “It’s really fun and special to be able to stick your hands in the dirt and make produce come home with you.” Craig said about why she likes working on the farm."/>
+<img src="img/sequenceone410.jpg" width="100%" height="100%" alt="Hope makes a quick trip to the farm refrigerator to take inventory of the current crops."/>
+<img src="img/seqeuncetwo410.jpg" width="100%" height="100%" alt="Crops are brought here the same day of harvesting in order to maintain their freshness."/>
+<img src="img/sequencethree410.jpg" width="100%" height="100%" alt="Only organic produce is permitted inside this area. This prevents commingling; the result of organic produce coming into contact with non-organic produce."/>
+<img src="img/sequencefour410.jpg" width="100%" height="100%" alt="Hope inspects the days produce."/>
+<img src="img/signature410.jpg" width="100%" height="100%" alt="Cal Poly fourth year Agriculture and Environmental Plant Science major Gary Gray (right), carries the day’s squash and pumpkin harvest back to their golf cart, while Hope (left) was given the task of choosing the best of the bunch."/>
+<img src="img/clincher410.jpg" width="100%" height="100%" alt="After the cart was loaded up Hope picked out the winning squash, “It has the best shape and feels the best, sorry guys.” Hope said. Apologizing to Abigail and William who had both picked different squash finalists."/>
+
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">The Farmers</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+    
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">knowing matters</h2>
+<article>
+  <p class="tab">Click on the images to hear from the staff about why knowing where your food comes from is important. <br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/farmmanageraudio.mp3" type="audio/mpeg" />
+</audio>
+            
+<audio id="audio_2">
+    <source src="audio/hopespringeraudio.mp3" type="audio/mpeg" />
+</audio>
+            
+<audio id="audio_3">
+	<source src="audio/garygrayaudio.mp3" type="audio/mpeg" />
+</audio>
+            
+<img src="img/danrollover.jpg" class="rollover" alt="description" onMouseOver="this.src='img/danrollover.jpg'" onMouseOut="this.src='img/danfarmmanager.jpg'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/hopespringerrollover.jpg" class="rollover" alt="description" onMouseOver="this.src='img/hopespringerrollover.jpg'" onMouseOut="this.src='img/hopespringer.jpg'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/garygrayrollover.jpg" class="rollover" alt="description" 
+     onMouseOver="this.src='img/garygrayrollover.jpg'" onMouseOut="this.src='img/garygray.jpg'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Interview</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+    <!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/paralaxfarm.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">A look inside</h2>
+<article>
+<p class="tab">Annie O'niell was kind enough to sit down and talk about the farm. Who they are, what they do, and how to get involved.  </p>	
+<video width="100%" height="100%" poster="img/posterpic.jpg" controls>
+<source src="img/videointerview.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">Organic California</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of new section-->
+<div class="row whiteBG">
+<h2 id="num">Organic California</h2>
+    <p>California is home to the most organic farmland than any other state, while also producing the majority of the country's organic vegetables. Despite organic farming seeing a steady growth in the west organic farmland still only occupies 1% of all farmland in the United States</p>
+<div>
+    <div class="piktowrapper-embed" style="height: 300px; position: relative;" data-uid="42924509-untitled-infographic"><div class="pikto-canvas-wrap"><div class="pikto-canvas"><div class="embed-loading-overlay" style="width: 100%; height: 100%; position: absolute; text-align: center;"><img width="60px" alt="Loading..." style="margin-top: 100px" src="https://create.piktochart.com/loading.gif"/><p style="margin: 0; padding: 0; font-family: Lato, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 16px">Loading...</p></div></div></div></div><script>(function(d){var js, id="pikto-embed-js", ref=d.getElementsByTagName("script")[0];if (d.getElementById(id)) { return;}js=d.createElement("script"); js.id=id; js.async=true;js.src="https://create.piktochart.com/assets/embedding/embed.js";ref.parentNode.insertBefore(js, ref);}(document));</script>
+    
+    </div>
+</div>
+    
+<div class="BotRow">
+    <h2 id="nation" href="#nation">nationally recognized</h2>
+
+              <article>
+    <p>The Cal Poly Organic Farm has recieved national recognition for their work in agriculture and organic practices, ranking 6th out of 60 colleges by Online College Plan. While also being awknoledged by Best Value Colleges, as the 6th best college organic farm in the country. Click on the logos to see the official rankings. 
+        </p>
+    </article>
+    
+    <a href="https://www.bestvalueschools.org/top-15-college-farms-united-states/">
+        
+        <img alt="Best Value Schools" src="img/transparentotherlogo.png" width="200" height="150"></a>
+        
+        <a href="https://www.onlinecollegeplan.com/college-farms/">
+        <img alt="college farms" src="img/transparentblueribbon.png" width="200" height="175">
+        </a>
+    
+    
+    </div>
+ <div class="icon">
+    
+ 
+    
+</div>
+<!--end of new section-->
+	
+<!--beginning of footer-->
+<footer>The Cal Poly Organic Farm | San Luis Obispo, CA | <a href="mailto: clarkjack7@gmail.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2019 | Site by Jack Clark 
+    
+    
+    
+    
+    
+</footer>
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+</html>
